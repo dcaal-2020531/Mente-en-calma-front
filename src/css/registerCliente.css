@@ -1,0 +1,69 @@
+.register-page {
+  display: flex; /* Necesario para centrar contenido */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem; /* Añade espacio interno para pantallas pequeñas */
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  overflow-y: auto; /* Permite hacer scroll si no cabe todo */
+  box-sizing: border-box;
+}
+.register-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 350px;
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.register-container label {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+}
+
+.register-container input,
+.register-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0083b0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-container button:hover {
+  background-color: #005f73;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #0083b0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

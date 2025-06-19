@@ -1,0 +1,137 @@
+/* Estilos rediseñados para la vista de asignar cita */
+
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #cde6ff;
+}
+
+/* Main */
+main {
+  padding: 2rem;
+}
+
+.bienvenida {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bienvenida h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bienvenida p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Formulario */
+.formulario-cita {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem; /* Espaciado entre bloques de campo */
+}
+
+.formulario-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.formulario-group input,
+.formulario-group select,
+.formulario-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccd5df;
+  background-color: #f9fbfd;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+.formulario-group input:focus,
+.formulario-group select:focus,
+.formulario-group textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.formulario-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario-cita button {
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.formulario-cita button:hover {
+  background-color: #367dc9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #e3eaf0;
+  color: #666;
+  margin-top: 2rem;
+}

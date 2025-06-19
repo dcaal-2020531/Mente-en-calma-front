@@ -112,40 +112,10 @@ footer {
   margin-top: 2rem;
 }
 
-.logout-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.logout-btn:hover {
-  color: #ffdddd;
-}
-
 .app-container {
   width: 100%;
   min-height: 100vh;
-  background-color: #f0f4f8; /* coincidir con body */
-  display: inline;
+  background-color: #f0f4f8;
+  display: flex;
   flex-direction: column;
-}
-
-.link-button {
-  background-color: #4a90e2;
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  margin-top: 0.3rem;
-}
-
-.link-button:hover {
-  background-color: #367dc9;
 }

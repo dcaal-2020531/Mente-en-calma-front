@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/styleMenuCliente.css';
 
 const ClientMenu = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="app-container">
       <header>
@@ -11,7 +14,6 @@ const ClientMenu = () => {
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Mi Perfil</a></li>
             <li><a href="#">Sesiones</a></li>
-            <li><a href="#">Psicólogos</a></li>
             <li><a href="#">Recursos</a></li>
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
@@ -26,14 +28,18 @@ const ClientMenu = () => {
 
         <section className="opciones">
           <div className="tarjeta">
-            <h2>Agendar Sesión</h2>
+            <h2>Agendar Cita</h2>
             <p>Elige día y hora para tu próxima consulta con un profesional.</p>
-            <a href="#">Agendar</a>
+            <button className="link-button" onClick={() => navigate('/asignarCita')}>
+              Asignar
+            </button>
           </div>
           <div className="tarjeta">
             <h2>Ver Psicólogos</h2>
             <p>Explora el perfil de nuestros especialistas y elige con quién trabajar.</p>
-            <a href="#">Ver</a>
+            <button className="link-button" onClick={() => navigate('/verPsicologos')}>
+              Ver
+            </button>
           </div>
           <div className="tarjeta">
             <h2>Material de Apoyo</h2>
