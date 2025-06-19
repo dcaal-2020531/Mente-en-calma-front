@@ -4,9 +4,15 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #00b4db, #0083b0);
   height: 100vh;
+}
+
+/* Este contenedor sí debe tener flex */
+.login-page {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh; /* Para ocupar toda la pantalla */
+  background: linear-gradient(to right, #00b4db, #0083b0);
 }
 
 .login-container {
