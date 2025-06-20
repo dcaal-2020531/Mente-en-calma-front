@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/perfilCliente.css';  // Añade tu CSS para el perfil
+import '../css/perfilCliente.css';  // Puedes usar un CSS distinto si prefieres
 
-const PerfilCliente = () => {
-  const [cliente, setCliente] = useState(null);
+const PerfilAdmin = () => {
+  const [admin, setAdmin] = useState(null);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -11,23 +11,23 @@ const PerfilCliente = () => {
     const fetchPerfil = async () => {
       try {
         const token = localStorage.getItem('token');
-        console.log('Token al montar PerfilCliente:', token);
+        console.log('Token al montar PerfilAdmin:', token);
         if (!token) {
           setError('No estás autenticado.');
           return;
         }
 
-        const res = await fetch('http://localhost:1234/v1/user/getUserProfile', {
+        const res = await fetch('http://localhost:1234/v1/admin/getAdmin', {
           method: 'GET',
           headers: {
-            Authorization: `Bearer ${token}`, // Pasando el token en el header
+            Authorization: `Bearer ${token}`,
           },
         });
 
         const data = await res.json();
 
         if (res.ok) {
-          setCliente(data.user); // Suponiendo que el backend devuelve el perfil con la clave 'user'
+          setAdmin(data.admin || data.user); // Asegúrate de que el backend lo devuelva como "admin"
         } else {
           setError(data.message || 'Error al cargar el perfil');
         }
@@ -42,18 +42,18 @@ const PerfilCliente = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); // Redirigir al login
+    navigate('/adminlogin'); // Ruta de login para admin
   };
 
   return (
     <div className="app-container">
       <header>
-        <div className="logo">🧠 Mente en Calma</div>
+        <div className="logo">🧠 Mente en Calma - Admin</div>
         <nav>
           <ul>
-            <li><a onClick={() => navigate('/menuCliente')}>Inicio</a></li>
-            <li><a onClick={() => navigate('/perfilCliente')}>Mi Perfil</a></li>
-            <li><a onClick={handleLogout}>Cerrar Sesión</a></li>
+            <li><a onClick={() => navigate('/menuAdmin')}>Inicio</a></li>
+            <li><a onClick={() => navigate('/perfilAdmin')}>Mi Perfil</a></li>
+            <li><a onClick={handleLogout}>Cerrar sesión</a></li>
           </ul>
         </nav>
       </header>
@@ -66,17 +66,15 @@ const PerfilCliente = () => {
 
         {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
 
-        {cliente ? (
+        {admin ? (
           <div className="perfil-container">
             <div className="perfil-card">
-             
-              <p><strong>Nombre:</strong> {cliente.name} {cliente.surname}</p>
-              <p><strong>Email:</strong> {cliente.email}</p>
-              <p><strong>Teléfono:</strong> {cliente.phone}</p>
-              <p><strong>Fecha de nacimiento:</strong> {new Date(cliente.birthdate).toLocaleDateString()}</p>
-              <p><strong>Género:</strong> {cliente.gender}</p>
-              <p><strong>País:</strong> {cliente.country}</p>
-              <p><strong>Departamento:</strong> {cliente.departament}</p>
+              <p><strong>Nombre:</strong> {admin.name} {admin.surname}</p>
+              <p><strong>Usuario:</strong> {admin.username}</p>
+              <p><strong>Email:</strong> {admin.email}</p>
+              <p><strong>Teléfono:</strong> {admin.phone}</p>
+              <p><strong>Rol:</strong> {admin.role}</p>
+              <p><strong>Estado:</strong> {admin.status ? 'Activo' : 'Inactivo'}</p>
             </div>
           </div>
         ) : (
@@ -85,10 +83,10 @@ const PerfilCliente = () => {
       </main>
 
       <footer>
-        <p>&copy; 2025 Mente en Calma | Cliente</p>
+        <p>&copy; 2025 Mente en Calma | Administrador</p>
       </footer>
     </div>
   );
 };
 
-export default PerfilCliente;
+export default PerfilAdmin;

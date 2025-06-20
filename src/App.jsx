@@ -19,6 +19,9 @@ import AgregarPsicologo from './pages/agregarPsicologo.jsx';
 import AgregarPrograma from '../src/pages/agregarPrograma.jsx'
 import VerCitasCliente from '../src/pages/verCitasCliente.jsx'
 import PerfilCliente from './pages/perfilCliente.jsx';
+import PerfilPsicologo from './pages/perfilPsicologo.jsx';
+import PerfilAdmin from './pages/perfilAdmin.jsx';
+import Login from '../src/pages/login.jsx';
 function App() {
   
   return (
@@ -43,6 +46,10 @@ function App() {
        <Route path='/agregarPrograma' element={<AgregarPrograma />} />
        <Route path='/verCitasCliente' element={<VerCitasCliente />} />
        <Route path='/perfilCliente' element={<PerfilCliente />}/>
+       <Route path='/perfilPsicologo' element={<PerfilPsicologo />}/>
+       <Route path='/perfilAdmin' element={<PerfilAdmin />}/>
+       <Route path='/login' element={<Login />}/>
+
        </Routes>
     </BrowserRouter>
   )

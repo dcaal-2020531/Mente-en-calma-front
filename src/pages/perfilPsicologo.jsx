@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/perfilCliente.css';  // Añade tu CSS para el perfil
+import '../css/perfilCliente.css';  // CSS para el perfil (puedes renombrar si quieres)
 
-const PerfilCliente = () => {
-  const [cliente, setCliente] = useState(null);
+const PerfilPsicologo = () => {
+  const [psicologo, setPsicologo] = useState(null);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -11,23 +11,24 @@ const PerfilCliente = () => {
     const fetchPerfil = async () => {
       try {
         const token = localStorage.getItem('token');
-        console.log('Token al montar PerfilCliente:', token);
+        console.log('Token al montar PerfilPsicologo:', token);
         if (!token) {
           setError('No estás autenticado.');
           return;
         }
 
-        const res = await fetch('http://localhost:1234/v1/user/getUserProfile', {
+        const res = await fetch('http://localhost:1234/v1/psychologist/getPyschologist', {
           method: 'GET',
           headers: {
-            Authorization: `Bearer ${token}`, // Pasando el token en el header
+            Authorization: `Bearer ${token}`,
           },
         });
 
         const data = await res.json();
 
         if (res.ok) {
-          setCliente(data.user); // Suponiendo que el backend devuelve el perfil con la clave 'user'
+          setPsicologo(data.psychologist || data.user); 
+          // Ajusta la clave según lo que te devuelva tu backend: puede ser "psychologist" o "user"
         } else {
           setError(data.message || 'Error al cargar el perfil');
         }
@@ -42,7 +43,7 @@ const PerfilCliente = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); // Redirigir al login
+    navigate('/loginPsicologo'); // Cambia la ruta si es distinto el login para psicólogo
   };
 
   return (
@@ -51,9 +52,9 @@ const PerfilCliente = () => {
         <div className="logo">🧠 Mente en Calma</div>
         <nav>
           <ul>
-            <li><a onClick={() => navigate('/menuCliente')}>Inicio</a></li>
-            <li><a onClick={() => navigate('/perfilCliente')}>Mi Perfil</a></li>
-            <li><a onClick={handleLogout}>Cerrar Sesión</a></li>
+            <li><a onClick={() => navigate('/menuPsicologo')}>Inicio</a></li>
+            <li><a onClick={() => navigate('/perfilPsicologo')}>Mi Perfil</a></li>
+            <li><a onClick={handleLogout}>Cerrar sesión</a></li>
           </ul>
         </nav>
       </header>
@@ -66,17 +67,17 @@ const PerfilCliente = () => {
 
         {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
 
-        {cliente ? (
+        {psicologo ? (
           <div className="perfil-container">
             <div className="perfil-card">
-             
-              <p><strong>Nombre:</strong> {cliente.name} {cliente.surname}</p>
-              <p><strong>Email:</strong> {cliente.email}</p>
-              <p><strong>Teléfono:</strong> {cliente.phone}</p>
-              <p><strong>Fecha de nacimiento:</strong> {new Date(cliente.birthdate).toLocaleDateString()}</p>
-              <p><strong>Género:</strong> {cliente.gender}</p>
-              <p><strong>País:</strong> {cliente.country}</p>
-              <p><strong>Departamento:</strong> {cliente.departament}</p>
+              <p><strong>Nombre:</strong> {psicologo.name} {psicologo.surname}</p>
+              <p><strong>Email:</strong> {psicologo.email}</p>
+              <p><strong>Teléfono:</strong> {psicologo.phone}</p>
+              <p><strong>Fecha de nacimiento:</strong> {new Date(psicologo.birthdate).toLocaleDateString()}</p>
+              <p><strong>Género:</strong> {psicologo.gender}</p>
+              <p><strong>País:</strong> {psicologo.country}</p>
+              <p><strong>Departamento:</strong> {psicologo.departament}</p>
+              <p><strong>Especialidades:</strong> {psicologo.specialties || 'No registrada'}</p>
             </div>
           </div>
         ) : (
@@ -85,10 +86,10 @@ const PerfilCliente = () => {
       </main>
 
       <footer>
-        <p>&copy; 2025 Mente en Calma | Cliente</p>
+        <p>&copy; 2025 Mente en Calma | Psicólogo</p>
       </footer>
     </div>
   );
 };
 
-export default PerfilCliente;
+export default PerfilPsicologo;
