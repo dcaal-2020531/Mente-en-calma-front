@@ -18,7 +18,7 @@ import MenuAdmin from '../src/pages/menuAdministrador.jsx'
 import AgregarPsicologo from './pages/agregarPsicologo.jsx';
 import AgregarPrograma from '../src/pages/agregarPrograma.jsx'
 import VerCitasCliente from '../src/pages/verCitasCliente.jsx'
-
+import PerfilCliente from './pages/perfilCliente.jsx';
 function App() {
   
   return (
@@ -42,7 +42,7 @@ function App() {
        <Route path='/agregarPsicologo' element={<AgregarPsicologo />} />
        <Route path='/agregarPrograma' element={<AgregarPrograma />} />
        <Route path='/verCitasCliente' element={<VerCitasCliente />} />
-
+       <Route path='/perfilCliente' element={<PerfilCliente />}/>
        </Routes>
     </BrowserRouter>
   )

@@ -12,7 +12,7 @@ const ClientMenu = () => {
         <nav>
           <ul>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Mi Perfil</a></li>
+            <li><a href="#" onClick={() => navigate('/perfilCliente')}>Mi Perfil</a></li>
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
         </nav>
