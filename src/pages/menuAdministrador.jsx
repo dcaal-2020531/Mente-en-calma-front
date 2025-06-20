@@ -12,7 +12,7 @@ const PsicologoMenu = () => {
         <nav>
           <ul>
             <li><a href="#" onClick={() => navigate('/')}>Inicio</a></li>
-            <li><a href="#" onClick={() => navigate('/perfilPsicologo')}>Mi Perfil</a></li>
+            <li><a href="#" onClick={() => navigate('/perfilAdmin')}>Mi Perfil</a></li>
             <li><a href="#" onClick={() => navigate('/logout')}>Cerrar Sesión</a></li>
           </ul>
         </nav>

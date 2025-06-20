@@ -16,6 +16,9 @@ import VerCitasPsicologo from './pages/verCitasPsicologo.jsx';
 import RegisterAdmin from '../src/pages/registerPsicologo.jsx'
 import MenuAdmin from '../src/pages/menuAdministrador.jsx'
 import PerfilCliente from './pages/perfilCliente.jsx';
+import PerfilPsicologo from './pages/perfilPsicologo.jsx';
+import PerfilAdmin from './pages/perfilAdmin.jsx';
+import Login from '../src/pages/login.jsx';
 function App() {
   
   return (
@@ -37,6 +40,10 @@ function App() {
        <Route path='/registerAdmin' element={<RegisterAdmin />} />
        <Route path='/menuAdmin' element={<MenuAdmin />} />
        <Route path='/perfilCliente' element={<PerfilCliente />}/>
+       <Route path='/perfilPsicologo' element={<PerfilPsicologo />}/>
+       <Route path='/perfilAdmin' element={<PerfilAdmin />}/>
+       <Route path='/login' element={<Login />}/>
+
        </Routes>
     </BrowserRouter>
   )
