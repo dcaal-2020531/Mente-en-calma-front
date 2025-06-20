@@ -23,7 +23,7 @@ const LoginPsicologo = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:1234/v1/auth/loginPsicologo', {
+      const res = await fetch('http://localhost:1234/v1/auth/loginPsychologist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

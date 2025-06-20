@@ -3,44 +3,73 @@ import { useNavigate } from 'react-router-dom';
 import '../css/admin.css';
 
 const AdminLogin = () => {
-  const [usernameOrEmail, setUsernameOrEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [mensaje, setMensaje] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Aquí podrías hacer una solicitud a tu backend si es necesario
-    // Por ahora simplemente redirige al menú principal del cliente
-    navigate('/menuCliente');
+    try {
+      const res = await fetch('http://localhost:1234/v1/auth/loginAdmin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem('token', data.token);
+        navigate('/menuAdmin');
+      } else {
+        setMensaje(data.message || 'Credenciales inválidas');
+      }
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      setMensaje('Error del servidor. Intenta más tarde.');
+    }
   };
 
+
   return (
-    <div className="admin-login-container">
-      <h2>Login Administrador</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="usernameOrEmail">Usuario o Correo electrónico:</label>
-        <input
-          type="text"
-          id="usernameOrEmail"
-          name="usernameOrEmail"
-          value={usernameOrEmail}
-          onChange={(e) => setUsernameOrEmail(e.target.value)}
-          required
-        />
+    <div className="login-page">
+      <div className="login-container">
+        <h2>Login Administrador</h2>
 
-        <label htmlFor="password">Contraseña:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        {mensaje && (
+          <p style={{ color: 'red', textAlign: 'center' }}>{mensaje}</p>
+        )}
 
-        <button type="submit">Iniciar Sesión</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username">Usuario:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        
+      </div>
     </div>
   );
 };

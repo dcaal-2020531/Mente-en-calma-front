@@ -1,59 +1,68 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8; /* Fondo suave tipo verde agua */
-  display:block;
+
+/* Este contenedor sí debe tener flex */
+.login-page {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  height: 100vh; /* Para ocupar toda la pantalla */
+  background: linear-gradient(to right, #00b4db, #0083b0);
 }
 
-.admin-login-container {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
+.login-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
 }
 
-.admin-login-container h2 {
+.login-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: #333;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
+.login-container label {
+  display: block;
   margin-top: 10px;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #34495e;
+  color: #333;
 }
 
-input {
+.login-container input {
+  width: 100%;
   padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 5px;
 }
 
-button {
-  margin-top: 20px;
-  padding: 12px;
-  background-color: #2ecc71;
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0083b0;
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #27ae60;
+.login-container button:hover {
+  background-color: #005f73;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-link a {
+  color: #0083b0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
 }

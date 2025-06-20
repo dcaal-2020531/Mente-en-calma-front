@@ -55,7 +55,7 @@ const Login = () => {
   };
 
     const handleGoToAdministrador = () => {
-    navigate('/loginPsicologo');
+    navigate('/adminlogin');
   };
 
   return (

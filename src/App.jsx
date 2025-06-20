@@ -12,6 +12,9 @@ import MenuPsicologo from '../src/pages/menuPsicologo.jsx'
 import LoginPsicologo from './pages/loginPsicologo.jsx'
 import AdminLogin from '../src/pages/adminlogin.jsx'
 import RegisterPsicologo from '../src/pages/registerPsicologo.jsx'
+import VerCitasPsicologo from './pages/verCitasPsicologo.jsx';
+import RegisterAdmin from '../src/pages/registerPsicologo.jsx'
+import MenuAdmin from '../src/pages/menuAdministrador.jsx'
 function App() {
   
   return (
@@ -28,6 +31,10 @@ function App() {
        <Route path="/menuPsicologo" element={<MenuPsicologo />} /> 
        <Route path="/loginPsicologo" element={<LoginPsicologo />} /> 
        <Route path='/registerPsicologo' element={<RegisterPsicologo />} />
+       <Route path='/verCitasPsicologo' element={<VerCitasPsicologo />} />
+       <Route path='/adminLogin' element={<AdminLogin />} />
+       <Route path='/registerAdmin' element={<RegisterAdmin />} />
+       <Route path='/menuAdmin' element={<MenuAdmin />} />
        </Routes>
     </BrowserRouter>
   )

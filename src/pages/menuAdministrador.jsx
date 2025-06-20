@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/menuPsicologo.css'; // Puedes usar un CSS similar o crear uno nuevo
+import '../css/menuPsicologo.css';
 
 const PsicologoMenu = () => {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ const PsicologoMenu = () => {
   return (
     <div className="app-container">
       <header>
-        <div className="logo">🧠 Mente en Calma - Psicólogo</div>
+        <div className="logo">🧠 Mente en Calma - Administrador</div>
         <nav>
           <ul>
             <li><a href="#" onClick={() => navigate('/')}>Inicio</a></li>
@@ -21,22 +21,22 @@ const PsicologoMenu = () => {
       <main>
         <section className="bienvenida">
           <h1>Bienvenido/a, Psicólogo</h1>
-          <p>Gestiona tus citas y acompaña a tus pacientes en su camino.</p>
+          <p>Administra el personal y los centros de atención.</p>
         </section>
 
         <section className="opciones">
           <div className="tarjeta">
-            <h2>Ver Citas</h2>
-            <p>Consulta tus próximas citas programadas.</p>
-            <button className="link-button" onClick={() => navigate('/verCitasPsicologo')}>
-              Ver
+            <h2>Agregar Psicólogo</h2>
+            <p>Registra un nuevo psicólogo en el sistema.</p>
+            <button className="link-button" onClick={() => navigate('/registerPsychologist')}>
+              Agregar
             </button>
           </div>
           <div className="tarjeta">
-            <h2>Registrar Avances</h2>
-            <p>Documenta el progreso y notas de tus sesiones.</p>
-            <button className="link-button" onClick={() => navigate('/registrarAvance')}>
-              Registrar
+            <h2>Agregar Centro Psiquiátrico</h2>
+            <p>Incorpora un nuevo centro al sistema de salud mental.</p>
+            <button className="link-button" onClick={() => navigate('/registerCentro')}>
+              Agregar
             </button>
           </div>
         </section>
