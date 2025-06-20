@@ -11,16 +11,16 @@ const PsicologoMenu = () => {
         <div className="logo">🧠 Mente en Calma - Administrador</div>
         <nav>
           <ul>
-            <li><a href="#" onClick={() => navigate('/')}>Inicio</a></li>
+            <li><a href="#" onClick={() => navigate('/menuAdmin')}>Inicio</a></li>
             <li><a href="#" onClick={() => navigate('/perfilPsicologo')}>Mi Perfil</a></li>
-            <li><a href="#" onClick={() => navigate('/logout')}>Cerrar Sesión</a></li>
+            <li><a href="#" onClick={() => navigate('/adminLogin')}>Cerrar Sesión</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
         <section className="bienvenida">
-          <h1>Bienvenido/a, Psicólogo</h1>
+          <h1>Bienvenido/a, Administrador.</h1>
           <p>Administra el personal y los centros de atención.</p>
         </section>
 
@@ -28,14 +28,7 @@ const PsicologoMenu = () => {
           <div className="tarjeta">
             <h2>Agregar Psicólogo</h2>
             <p>Registra un nuevo psicólogo en el sistema.</p>
-            <button className="link-button" onClick={() => navigate('/registerPsychologist')}>
-              Agregar
-            </button>
-          </div>
-          <div className="tarjeta">
-            <h2>Agregar Centro Psiquiátrico</h2>
-            <p>Incorpora un nuevo centro al sistema de salud mental.</p>
-            <button className="link-button" onClick={() => navigate('/registerCentro')}>
+            <button className="link-button" onClick={() => navigate('/agregarPsicologo')}>
               Agregar
             </button>
           </div>

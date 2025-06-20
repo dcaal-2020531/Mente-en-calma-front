@@ -15,6 +15,10 @@ import RegisterPsicologo from '../src/pages/registerPsicologo.jsx'
 import VerCitasPsicologo from './pages/verCitasPsicologo.jsx';
 import RegisterAdmin from '../src/pages/registerPsicologo.jsx'
 import MenuAdmin from '../src/pages/menuAdministrador.jsx'
+import AgregarPsicologo from './pages/agregarPsicologo.jsx';
+import AgregarPrograma from '../src/pages/agregarPrograma.jsx'
+import VerCitasCliente from '../src/pages/verCitasCliente.jsx'
+
 function App() {
   
   return (
@@ -35,6 +39,10 @@ function App() {
        <Route path='/adminLogin' element={<AdminLogin />} />
        <Route path='/registerAdmin' element={<RegisterAdmin />} />
        <Route path='/menuAdmin' element={<MenuAdmin />} />
+       <Route path='/agregarPsicologo' element={<AgregarPsicologo />} />
+       <Route path='/agregarPrograma' element={<AgregarPrograma />} />
+       <Route path='/verCitasCliente' element={<VerCitasCliente />} />
+
        </Routes>
     </BrowserRouter>
   )

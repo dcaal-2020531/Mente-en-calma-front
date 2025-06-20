@@ -1,0 +1,87 @@
+/* Contenedor general */
+body {
+  background: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  width: 600px;
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4a90e2;
+}
+
+/* Etiquetas */
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Inputs y selects */
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Botón de envío */
+.form-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 2rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #367dc9;
+}
+
+/* Enlace inferior */
+.switch-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #555;
+}
+
+.switch-link a {
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}

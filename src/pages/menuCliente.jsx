@@ -46,6 +46,13 @@ const ClientMenu = () => {
               Explorar
             </button>
           </div>
+             <div className="tarjeta">
+            <h2>Ver mis citas</h2>
+            <p>Ve cuales citas tienes asignas.</p>
+            <button className="link-button" onClick={() => navigate('/verCitasCliente')}>
+              Explorar
+            </button>
+          </div>
         </section>
       </main>
 
