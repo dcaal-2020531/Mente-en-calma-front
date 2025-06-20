@@ -35,7 +35,7 @@ const Login = () => {
 
       if (res.ok) {
         // Guardar token en localStorage
-        localStorage.setItem('token', data.token); // Asegúrate que 'token' sea el nombre correcto en la respuesta
+        localStorage.setItem('token', data.token);
         navigate('/menuCliente');
       } else {
         setMensaje(data.message || 'Credenciales incorrectas');
@@ -48,6 +48,14 @@ const Login = () => {
 
   const handleGoToRegister = () => {
     navigate('/registerCliente');
+  };
+
+  const handleGoToPsicologoLogin = () => {
+    navigate('/loginPsicologo');
+  };
+
+    const handleGoToAdministrador = () => {
+    navigate('/loginPsicologo');
   };
 
   return (
@@ -81,7 +89,41 @@ const Login = () => {
           <button type="submit">Ingresar</button>
         </form>
 
-        <div className="register-link">
+        <button
+          onClick={handleGoToPsicologoLogin}
+          style={{
+            marginTop: '1rem',
+            backgroundColor: '#4a90e2',
+            color: 'white',
+            border: 'none',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        >
+          Acceder como Psicólogo
+        </button>
+
+          <button
+          onClick={handleGoToAdministrador}
+          style={{
+            marginTop: '1rem',
+            backgroundColor: '#4a90e2',
+            color: 'white',
+            border: 'none',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        >
+          Acceder como Administrador
+        </button>
+
+        <div className="register-link" style={{ marginTop: '1rem' }}>
           <p>
             ¿No tienes una cuenta?{' '}
             <span
@@ -92,6 +134,7 @@ const Login = () => {
             </span>
           </p>
         </div>
+        
       </div>
     </div>
   );

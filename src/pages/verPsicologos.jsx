@@ -46,8 +46,6 @@ const VerPsicologos = () => {
           <ul>
             <li><a href="/menuCliente">Inicio</a></li>
             <li><a href="#">Mi Perfil</a></li>
-            <li><a href="#">Sesiones</a></li>
-            <li><a href="#">Recursos</a></li>
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
         </nav>

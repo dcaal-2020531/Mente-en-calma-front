@@ -1,0 +1,109 @@
+/* Encabezado de navegación */
+.header-navegacion {
+  background-color: #4a90e2;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-navegacion .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.header-navegacion nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-navegacion nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-navegacion nav a:hover {
+  color: #cde6ff;
+}
+
+
+.bienestar-container {
+  font-family: "Segoe UI", sans-serif;
+  padding: 2rem;
+  background-color: #f4f9fc;
+}
+
+.bienestar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bienestar-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.bienestar-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.articulos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.articulo-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.articulo-card h2 {
+  color: #2980b9;
+  margin-bottom: 0.5rem;
+}
+
+.articulo-card .autor {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.articulo-card .contenido {
+  color: #444;
+  flex-grow: 1;
+}
+
+.leer-mas {
+  margin-top: 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.3s ease;
+}
+
+.leer-mas:hover {
+  background-color: #357ab8;
+}
+
+.bienestar-footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #777;
+  font-size: 0.9rem;
+}

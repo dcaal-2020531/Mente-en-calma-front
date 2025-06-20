@@ -13,8 +13,6 @@ const ClientMenu = () => {
           <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Mi Perfil</a></li>
-            <li><a href="#">Sesiones</a></li>
-            <li><a href="#">Recursos</a></li>
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
         </nav>
@@ -44,7 +42,9 @@ const ClientMenu = () => {
           <div className="tarjeta">
             <h2>Material de Apoyo</h2>
             <p>Lee artículos y accede a recursos útiles para tu bienestar.</p>
-            <a href="#">Explorar</a>
+            <button className="link-button" onClick={() => navigate('/materialApoyo')}>
+              Explorar
+            </button>
           </div>
         </section>
       </main>

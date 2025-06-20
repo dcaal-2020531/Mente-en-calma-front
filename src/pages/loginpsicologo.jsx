@@ -1,25 +1,99 @@
-import React from 'react';
-import './style.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../pages/login.css';
 
-const LoginPsychologist = () => {
+const LoginPsicologo = () => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [mensaje, setMensaje] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch('http://localhost:1234/v1/auth/loginPsicologo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem('token', data.token);
+        navigate('/menuPsicologo');
+      } else {
+        setMensaje(data.message || 'Credenciales incorrectas');
+      }
+    } catch (error) {
+      console.error('Error al conectar con el servidor:', error);
+      setMensaje('Error del servidor. Intenta más tarde.');
+    }
+  };
+
+  const handleGoToRegister = () => {
+    navigate('/registerPsicologo'); // Ajusta la ruta si es diferente
+  };
+
   return (
-    <div className="form-container">
-      <h2>Login Psicólogo</h2>
-      <form method="POST" action="/login-psychologist">
-        <label htmlFor="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required />
+    <div className="login-page">
+      <div className="login-container">
+        <h2>Login Psicólogo</h2>
 
-        <label htmlFor="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required />
+        {mensaje && <p style={{ color: 'red', textAlign: 'center' }}>{mensaje}</p>}
 
-        <button type="submit">Iniciar Sesión</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Correo Electrónico:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-      <p className="switch-link">
-        ¿No tienes cuenta? <a href="registerpsicologo.html">Regístrate aquí</a>
-      </p>
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+
+          <button type="submit">Ingresar</button>
+        </form>
+
+        <div className="register-link" style={{ marginTop: '1rem' }}>
+          <p>
+            ¿No tienes una cuenta?{' '}
+            <span
+              onClick={handleGoToRegister}
+              style={{ color: '#0083b0', cursor: 'pointer', fontWeight: 'bold' }}
+            >
+              Regístrate aquí
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default LoginPsychologist;
+export default LoginPsicologo;
