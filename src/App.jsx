@@ -49,7 +49,7 @@ function App() {
        <Route path='/perfilPsicologo' element={<PerfilPsicologo />}/>
        <Route path='/perfilAdmin' element={<PerfilAdmin />}/>
        <Route path='/login' element={<Login />}/>
-
+ 
        </Routes>
     </BrowserRouter>
   )
