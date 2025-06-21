@@ -13,7 +13,7 @@ const PsicologoMenu = () => {
           <ul>
             <li><a href="#" onClick={() => navigate('/')}>Inicio</a></li>
             <li><a href="#" onClick={() => navigate('/perfilPsicologo')}>Mi Perfil</a></li>
-            <li><a href="#" onClick={() => navigate('/logout')}>Cerrar Sesión</a></li>
+            <li><a href="#" onClick={() => navigate('/adminLogin')}>Cerrar Sesión</a></li>
           </ul>
         </nav>
       </header>
@@ -33,9 +33,9 @@ const PsicologoMenu = () => {
             </button>
           </div>
           <div className="tarjeta">
-            <h2>Registrar Avances</h2>
-            <p>Documenta el progreso y notas de tus sesiones.</p>
-            <button className="link-button" onClick={() => navigate('/registrarAvance')}>
+            <h2>Ver Clientes.</h2>
+            <p>Mira y conoce un poco más de nuestros clientes.</p>
+            <button className="link-button" onClick={() => navigate('/verClientes')}>
               Registrar
             </button>
           </div>

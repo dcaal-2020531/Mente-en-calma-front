@@ -64,7 +64,6 @@ const VerPsicologos = () => {
               <p><strong>Especialidad:</strong> {psico.specialties || psico.especialidad}</p>
               <p>Email: {psico.email}</p>
               {/* Aquí puedes agregar más campos que desees mostrar */}
-              <a href="#">Ver Perfil</a>
             </div>
           ))}
         </section>

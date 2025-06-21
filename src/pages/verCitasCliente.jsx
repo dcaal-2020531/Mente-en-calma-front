@@ -49,7 +49,7 @@ const VerCitasUsuario = () => {
       <main>
         <section className="bienvenida">
           <h1>Mis Citas</h1>
-          <p>Aquí puedes consultar tus citas programadas.</p>
+          <p>Aquí puedes consultar tus citas programadas con tu psicólogo.</p>
         </section>
 
         {mensaje && <p className="mensaje-error">{mensaje}</p>}
@@ -57,11 +57,11 @@ const VerCitasUsuario = () => {
         <section className="lista-citas">
           {appointments.map((cita, index) => (
             <div className="cita-card" key={index}>
-              <h3>{cita.title || 'Cita con psicólogo'}</h3>
+              <h3>Cita con {cita.psychologist?.name || 'Psicólogo(a)'}</h3>
               <p><strong>Fecha:</strong> {new Date(cita.date).toLocaleString()}</p>
-              <p><strong>Lugar:</strong> {cita.place || 'No especificado'}</p>
-              <p><strong>Modalidad:</strong> {cita.modality || '---'}</p>
-              <p><strong>Notas:</strong> {cita.notes || '---'}</p>
+              <p><strong>Estado:</strong> {cita.status}</p>
+              <p><strong>Notas:</strong> {cita.notes || 'Sin notas'}</p>
+              <br></br>
             </div>
           ))}
         </section>

@@ -28,12 +28,12 @@ const MaterialApoyo = () => {
   return (
     <div className="bienestar-container">
       {/* Encabezado principal */}
-      <header className="header-navegacion">
+        <header>
         <div className="logo">🧠 Mente en Calma</div>
         <nav>
           <ul>
             <li><a href="/menuCliente">Inicio</a></li>
-            <li><a href="/verPsicologos">Psicólogos</a></li>
+            <li><a href="perfilCliente">Mi Perfil</a></li>
             <li><a href="/">Cerrar Sesión</a></li>
           </ul>
         </nav>

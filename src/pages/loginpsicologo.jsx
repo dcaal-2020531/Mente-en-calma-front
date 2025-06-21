@@ -49,6 +49,16 @@ const LoginPsicologo = () => {
     navigate('/registerPsicologo'); // Ajusta la ruta si es diferente
   };
 
+
+  const handleGoToPsicologoLogin = () => {
+    navigate('/');
+  };
+
+    const handleGoToAdministrador = () => {
+    navigate('/adminlogin');
+  };
+
+
   return (
     <div className="login-page">
       <div className="login-container">
@@ -79,6 +89,40 @@ const LoginPsicologo = () => {
 
           <button type="submit">Ingresar</button>
         </form>
+
+        <button
+          onClick={handleGoToPsicologoLogin}
+          style={{
+            marginTop: '1rem',
+            backgroundColor: '#4a90e2',
+            color: 'white',
+            border: 'none',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        >
+          Acceder como Cliente
+        </button>
+
+          <button
+          onClick={handleGoToAdministrador}
+          style={{
+            marginTop: '1rem',
+            backgroundColor: '#4a90e2',
+            color: 'white',
+            border: 'none',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        >
+          Acceder como Administrador
+        </button>
 
         <div className="register-link" style={{ marginTop: '1rem' }}>
           <p>

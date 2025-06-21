@@ -41,13 +41,13 @@ const VerCitasPsicologo = () => {
 
   return (
     <div className="app-container">
-      <header>
-        <div className="logo">🧠 Mente en Calma</div>
+         <header>
+        <div className="logo">🧠 Mente en Calma - Psicólogo</div>
         <nav>
           <ul>
-            <li><a onClick={() => navigate('/menuPsicologo')}>Inicio</a></li>
-            <li><a onClick={() => navigate('/verCitasPsicologo')}>Mis Citas</a></li>
-            <li><a onClick={() => navigate('/olo')}>Cerrar sesión</a></li>
+            <li><a href="#" onClick={() => navigate('/menuPsicologo')}>Inicio</a></li>
+            <li><a href="#" onClick={() => navigate('/perfilPsicologo')}>Mi Perfil</a></li>
+            <li><a href="#" onClick={() => navigate('/loginPsicologo')}>Cerrar Sesión</a></li>
           </ul>
         </nav>
       </header>

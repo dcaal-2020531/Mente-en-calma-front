@@ -34,6 +34,14 @@ const AdminLogin = () => {
     }
   };
 
+    const handleGoToPsicologoLogin = () => {
+    navigate('/loginPsicologo');
+  };
+
+    const handleGoToAdministrador = () => {
+    navigate('/');
+  };
+
 
   return (
     <div className="login-page">
@@ -68,7 +76,40 @@ const AdminLogin = () => {
           <button type="submit">Iniciar Sesión</button>
         </form>
 
-        
+         <button
+          onClick={handleGoToPsicologoLogin}
+          style={{
+            marginTop: '1rem',
+            backgroundColor: '#4a90e2',
+            color: 'white',
+            border: 'none',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        >
+          Acceder como Psicólogo
+        </button>
+
+          <button
+          onClick={handleGoToAdministrador}
+          style={{
+            marginTop: '1rem',
+            backgroundColor: '#4a90e2',
+            color: 'white',
+            border: 'none',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            width: '100%',
+          }}
+        >
+          Acceder como Cliente
+        </button>
+
       </div>
     </div>
   );
