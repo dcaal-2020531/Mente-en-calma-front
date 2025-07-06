@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/verCitasPsicologo.css'; // Usa tu CSS general
+import '../css/verCitasPsicologo.css';
 
 const VerCitasPsicologo = () => {
   const [citas, setCitas] = useState([]);
@@ -41,13 +41,13 @@ const VerCitasPsicologo = () => {
 
   return (
     <div className="app-container">
-         <header>
+      <header>
         <div className="logo">🧠 Mente en Calma - Psicólogo</div>
         <nav>
           <ul>
             <li><a href="#" onClick={() => navigate('/menuPsicologo')}>Inicio</a></li>
             <li><a href="#" onClick={() => navigate('/perfilPsicologo')}>Mi Perfil</a></li>
-            <li><a href="#" onClick={() => navigate('/loginPsicologo')}>Cerrar Sesión</a></li>
+            <li><a href="#" onClick={handleLogout}>Cerrar Sesión</a></li>
           </ul>
         </nav>
       </header>
@@ -68,6 +68,14 @@ const VerCitasPsicologo = () => {
                 <p><strong>Paciente:</strong> {cita.user?.name} {cita.user?.surname}</p>
                 <p><strong>Email:</strong> {cita.user?.email}</p>
                 <p><strong>Notas:</strong> {cita.notes || 'Sin notas'}</p>
+
+                {/* ✅ Botón para iniciar la reunión virtual */}
+                <button
+                  className="link-button"
+                  onClick={() => navigate(`/reunionVirtualPsicologo/${cita._id}`)}
+                >
+                  Iniciar Reunión
+                </button>
               </div>
             ))
           ) : (

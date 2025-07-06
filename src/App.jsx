@@ -23,6 +23,9 @@ import PerfilPsicologo from './pages/perfilPsicologo.jsx';
 import PerfilAdmin from './pages/perfilAdmin.jsx';
 import Login from '../src/pages/login.jsx';
 import VerClientes from '../src/pages/verClientes.jsx'
+import ReunionVirtualPsicologo from '../src/pages/reunionVirtualPsicologo.jsx'
+import ReunionCliente from '../src/pages/reunionCliente.jsx'
+
 function App() {
   
   return (
@@ -50,7 +53,10 @@ function App() {
        <Route path='/perfilPsicologo' element={<PerfilPsicologo />}/>
        <Route path='/perfilAdmin' element={<PerfilAdmin />}/>
        <Route path='/login' element={<Login />}/>
-        <Route path='/verClientes' element={<VerClientes />}/>
+       <Route path='/verClientes' element={<VerClientes />}/>
+       <Route path='/reunionVirtualPsicologo/:id' element={< ReunionVirtualPsicologo />}/>
+       <Route path='/reunionCliente/:id' element={< ReunionCliente />}/>
+
        </Routes>
     </BrowserRouter>
   )

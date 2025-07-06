@@ -1,0 +1,142 @@
+/* reunionCliente.css */
+
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #cde6ff;
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+}
+
+.bienvenida {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bienvenida h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bienvenida p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Chat */
+.chat-container {
+  margin: 2rem auto;
+  max-width: 800px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container h2 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#messages {
+  height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+#messages p {
+  margin-bottom: 0.5rem;
+}
+
+#chatInput {
+  display: flex;
+  gap: 10px;
+}
+
+#chatInput input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#chatInput button {
+  padding: 0.6rem 1.2rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#chatInput button:hover {
+  background-color: #367dc9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #e3eaf0;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+}
